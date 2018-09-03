@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Book Look</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=".\bootstrap\dist\css\bootstrap.css" />
+    <link rel="stylesheet" href=".\font-awesome\css\font-awesome.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <br>
+            <h1>BookLook <i class="fa fa-eye"></i></h1>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-12 books">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-12 ">
+                <h3>Serch by book title\ author\ ISBN</h3><br>
+                <input type="text" class="form-control searchInput" placeholder="Book Search"><br>
+                <select name="inputType" class="searchType">
+                    <option value="none">chose a search type</option>
+                    <option value="intitle">Book title</option>
+                    <option value="inauthor">Book's author</option>
+                    <option value="isbn">books ISBN</option>
+                </select><br/>
+                <button class="btn btn-primary search">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <script id="book-template" type="text/x-handlebars-template">
+        {{#each books}}
+            <div class="book" data-Id='{{searchId}}'>
+                <h1><a class="title" href="#">{{volumeInfo.title}}</a></h1>
+                <p>{{volumeInfo.description}}</p>
+                <h3>Written by: {{volumeInfo.authors}} </h3>
+                <img src="{{volumeInfo.imageLinks.thumbnail}}">
+            </div>
+            <hr>
+        {{/each}}
+    </script>
+
+    <script id="error-template" type="text/x-handlebars-template">
+    <div class="error">
+        <p class="errorText"> <i class="fa fa-exclamation-triangle"></i> {{error}}</p>
+    </div>
+    </script>
+
+    <script id="loading-template" type="text/x-handlebars-template">
+        <div class="loading">
+            <h1> <i class="fa fa-spinner"></i> Loading</h1>
+        </div>
+    </script>
+    
+
+    <script src=".\jquery\dist\jquery.js"></script>
+    <script src=".\handlebars\dist\handlebars.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

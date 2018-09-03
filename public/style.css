@@ -1,0 +1,24 @@
+.title{
+    text-decoration: none;
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+.error{
+    border: 5px;
+    border-color: red;
+    background-color: rgba(255, 0, 0, 0.356);
+    text-align: center;
+    font-size: 40px;
+    color: crimson;
+}
+
+.search{
+    margin-top: 20px;
+}
+
+.loading{
+    text-align: center;
+}
